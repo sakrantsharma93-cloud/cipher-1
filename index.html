@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cipher — AI-powered criminal network analysis and investigative intelligence." />
+  <title>CIPHER — Investigative Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <canvas class="cipher-particle-field" id="cipherParticleField" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Cipher home">
+      <span class="brand-mark">C</span>
+      <span>CIPHER</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#intelligence">Intelligence</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="auth-actions">
+      <a class="login-btn" href="#auth-login" data-auth="login">Log in</a>
+      <a class="signup-btn" href="#auth-signup" data-auth="signup">Sign up <span>↗</span></a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse"></span> AI-POWERED INVESTIGATIVE INTELLIGENCE</div>
+        <h1>See the network<br><em>behind the evidence.</em></h1>
+        <p class="hero-text">
+          Cipher turns fragmented case data into connected people, organizations,
+          locations, events and evidence — so investigators can move from information
+          to insight faster.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#auth-signup" data-auth="signup">Explore Cipher <span>↗</span></a>
+          <a class="button ghost" href="#capabilities">See how it works <span>↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-network reveal delay-1">
+        <div class="network-stage hero-network-stage" id="blackbird">
+          <canvas id="blackbirdCanvas" aria-label="Animated Blackbird relationship network"></canvas>
+          <div class="network-vignette"></div>
+          <div class="network-hud top-left">
+            <span class="hud-kicker">RELATIONSHIP MAP</span>
+            <span>follow the links</span>
+          </div>
+          <div class="network-hud top-right">
+            <span><b id="nodeCount">24</b> nodes</span>
+            <span><b id="edgeCount">38</b> links</span>
+          </div>
+          <div class="hero-network-label"><span>CASE / BLACKBIRD_042</span><b><i></i> LIVE NETWORK</b></div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">SCROLL TO INVESTIGATE <span>↓</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Cipher capabilities">
+      <div class="ticker-track">
+        <span>ENTITY RESOLUTION</span><b>✦</b>
+        <span>NETWORK ANALYSIS</span><b>✦</b>
+        <span>AI ASSISTED INVESTIGATION</span><b>✦</b>
+        <span>TIMELINE RECONSTRUCTION</span><b>✦</b>
+        <span>GEOSPATIAL INTELLIGENCE</span><b>✦</b>
+        <span>EVIDENCE LINKING</span><b>✦</b>
+        <span>ENTITY RESOLUTION</span><b>✦</b>
+        <span>NETWORK ANALYSIS</span><b>✦</b>
+      </div>
+    </section>
+
+    <section class="problems section reveal">
+      <div class="section-label">001 / THE PROBLEM</div>
+      <div class="split-heading">
+        <h2>Investigations don't fail<br>from a lack of <em>data.</em></h2>
+        <p>They fail when the relationships hiding inside that data are too difficult to see, verify and explain.</p>
+      </div>
+
+      <div class="problem-list">
+        <article><span>001</span><div><h3>Fragmented intelligence</h3><p>Reports, records, media and databases live in separate places, making cross-case connections slow to uncover.</p></div><strong>∞</strong></article>
+        <article><span>002</span><div><h3>Hidden relationships</h3><p>Important links between people, organizations, locations and events disappear inside disconnected evidence.</p></div><strong>∞</strong></article>
+        <article><span>003</span><div><h3>Manual reconstruction</h3><p>Investigators spend hours rebuilding timelines and networks that should be available as an interactive view.</p></div><strong>∞</strong></article>
+        <article><span>004</span><div><h3>Hard-to-explain findings</h3><p>A useful discovery is not enough. The reasoning behind it must remain traceable and understandable.</p></div><strong>∞</strong></article>
+      </div>
+    </section>
+
+    <section class="statement section reveal">
+      <div class="section-label">002 / THE IDEA</div>
+      <h2>Every clue is a node.<br>Every connection is a <em>lead.</em></h2>
+      <p>Cipher creates one investigative layer over the case — connecting entities, evidence, places and time into a living intelligence graph.</p>
+    </section>
+
+    <section class="capabilities section" id="capabilities">
+      <div class="section-label reveal">003 / CAPABILITIES</div>
+      <div class="capabilities-intro reveal">
+        <div>
+          <span class="capabilities-kicker">ONE INVESTIGATION LAYER</span>
+          <h2>From scattered evidence<br>to <em>connected intelligence.</em></h2>
+        </div>
+        <p>Every major Cipher screen is built around the same idea: make relationships, movement, time and evidence easier to see, inspect and act on.</p>
+      </div>
+
+      <div class="feature-grid cipher-capability-grid">
+        <article class="feature-card capability-network feature-large reveal">
+          <div class="feature-topline"><div class="feature-number">001</div><span>CORE VIEW / NETWORK</span></div>
+          <div class="feature-icon">◎</div>
+          <h3>Network intelligence</h3>
+          <p>Build the relationship graph yourself. Add people, organizations, places or evidence, link them with context, and inspect every connection without drowning in clutter.</p>
+          <div class="capability-tags"><span>ENTITY GRAPH</span><span>LINKS</span><span>CLUSTERS</span></div>
+          <div class="mini-network" id="networkOne"><canvas id="networkOneCanvas" aria-label="Animated network intelligence graph"></canvas><span class="mini-network-glow"></span><span class="preview-label">LIVE RELATIONSHIP MAP</span></div>
+        </article>
+
+        <article class="feature-card capability-cases reveal delay-1">
+          <div class="feature-topline"><div class="feature-number">002</div><span>COMMAND / CASES</span></div>
+          <div class="feature-icon">◫</div>
+          <h3>Case command</h3>
+          <p>Start from a clean case workspace, move between investigations and keep the investigation anchored to one source of truth.</p>
+          <div class="case-preview"><span class="case-orbit"></span><span class="case-core">CASE</span><i></i><i></i><i></i><b>ACTIVE INVESTIGATION</b></div>
+        </article>
+
+        <article class="feature-card capability-gis reveal delay-2">
+          <div class="feature-topline"><div class="feature-number">003</div><span>CONTEXT / GIS</span></div>
+          <div class="feature-icon">⌖</div>
+          <h3>GIS intelligence</h3>
+          <p>Map the investigation. Inspect locations.</p>
+          <div class="map-demo capability-map">
+  <img class="india-minimap" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/India_outline.svg" alt="India map outline">
+  
+  <div class="map-readout"><span>INDIA / GIS</span><b>DELHI</b></div>
+</div>
+        </article>
+
+        <article class="feature-card capability-timeline reveal">
+          <div class="feature-topline"><div class="feature-number">004</div><span>SEQUENCE / TIMELINE</span></div>
+          <div class="feature-icon">⌁</div>
+          <h3>Timeline reconstruction</h3>
+          <p>Turn scattered dates, events and movements into a sequence investigators can follow, compare and replay.</p>
+          <div class="timeline-demo capability-timeline-demo">
+  <div class="sequence-line"></div>
+  <div class="sequence-step active"><i>01</i><span>ORIGIN</span></div>
+  <div class="sequence-step"><i>02</i><span>EVENT</span></div>
+  <div class="sequence-step"><i>03</i><span>LINK</span></div>
+  <div class="sequence-step"><i>04</i><span>OUTCOME</span></div>
+  <b>EVENT SEQUENCE / TRACE</b>
+</div>
+        </article>
+
+        <article class="feature-card capability-evidence reveal delay-1">
+          <div class="feature-topline"><div class="feature-number">005</div><span>PROOF / EVIDENCE</span></div>
+          <div class="feature-icon">◈</div>
+          <h3>Evidence intelligence</h3>
+          <p>Keep evidence, source records and investigator notes together so every finding stays grounded in the case.</p>
+          <div class="evidence-preview"><div><span>01</span><b>DOCUMENT</b><small>VERIFIED SOURCE</small></div><div><span>02</span><b>RECORD</b><small>CASE LINKED</small></div><div><span>03</span><b>NOTE</b><small>INVESTIGATOR</small></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cipher-timeline-section" id="timeline-reconstruction" aria-label="Timeline reconstruction demo">
+      <div class="cipher-timeline-sticky">
+        <div class="timeline-headline reveal">
+          <div class="section-label">004 / TIMELINE RECONSTRUCTION</div>
+          <div class="timeline-title-row">
+            <div>
+              <span class="timeline-kicker">CASE / MUMBAI BLASTS · 1993</span>
+              <h2>Reconstruct the sequence.<br><em>See what the case became.</em></h2>
+            </div>
+            <p>From the first event to the final court milestones, Cipher turns scattered case history into a traceable sequence.</p>
+          </div>
+        </div>
+
+        <div class="timeline-canvas" id="cipherTimeline">
+          <div class="timeline-meta top-left"><span>CASE / MB-1993</span><b>RECONSTRUCTION</b></div>
+          <div class="timeline-meta top-right"><span id="timelineProgressLabel">01 / 08</span><b id="timelineProgressState">TRACE READY</b></div>
+          <svg class="timeline-svg" viewBox="0 0 1600 1900" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <filter id="timelineGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur>
+                <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+              </filter>
+            </defs>
+            <path class="timeline-path-base" d="M 70 25 C 250 80, 430 155, 620 245 C 820 340, 1110 430, 1300 560 C 1450 665, 1450 800, 1280 900 C 1090 1010, 820 1015, 590 1115 C 360 1215, 145 1325, 120 1465 C 95 1605, 300 1705, 560 1765 C 760 1812, 980 1840, 1200 1885"></path>
+            <path class="timeline-path-trace" id="timelineTrace" d="M 70 25 C 250 80, 430 155, 620 245 C 820 340, 1110 430, 1300 560 C 1450 665, 1450 800, 1280 900 C 1090 1010, 820 1015, 590 1115 C 360 1215, 145 1325, 120 1465 C 95 1605, 300 1705, 560 1765 C 760 1812, 980 1840, 1200 1885"></path>
+          </svg>
+
+          <div class="timeline-node node-1" data-index="1" style="--x:4.4%;--y:1.3%"><i></i><span>12 MAR 1993</span></div>
+          <div class="timeline-node node-2" data-index="2" style="--x:40.3%;--y:13.5%"><i></i><span>12 MAR 1993</span></div>
+          <div class="timeline-node node-3" data-index="3" style="--x:75.5%;--y:26.5%"><i></i><span>19 APR 1993</span></div>
+          <div class="timeline-node node-4" data-index="4" style="--x:75.5%;--y:49.2%"><i></i><span>04 NOV 1993</span></div>
+          <div class="timeline-node node-5" data-index="5" style="--x:38.2%;--y:58.2%"><i></i><span>19 NOV 1993</span></div>
+          <div class="timeline-node node-6" data-index="6" style="--x:7.7%;--y:76.4%"><i></i><span>11 NOV 2005</span></div>
+          <div class="timeline-node node-7" data-index="7" style="--x:36.9%;--y:93.3%"><i></i><span>12 SEP 2006</span></div>
+          <div class="timeline-node node-8" data-index="8" style="--x:75.0%;--y:99.2%"><i></i><span>30 JUL 2015</span></div>
+
+          <article class="timeline-event event-1" data-event="1">
+            <span class="event-index">01 / ORIGIN</span><span class="event-date">12 MAR 1993</span><h3>Coordinated blasts strike Mumbai</h3>
+            <p>A series of explosions hit locations across the city.</p>
+            <div><b>257</b><span>reported fatalities</span><b>713</b><span>reported injured</span></div>
+          </article>
+          <article class="timeline-event event-2" data-event="2">
+            <span class="event-index">02 / IMPACT</span><span class="event-date">12 MAR 1993</span><h3>Multiple targets, one sequence</h3>
+            <p>Records describe coordinated explosions across major city locations.</p>
+            <div class="event-tags"><span>MUMBAI</span><span>1993</span><span>CASE OPENED</span></div>
+          </article>
+          <article class="timeline-event event-3" data-event="3">
+            <span class="event-index">03 / CASE DEVELOPMENT</span><span class="event-date">19 APR 1993</span><h3>First major arrest milestone</h3>
+            <p>Sanjay Dutt was arrested in a related arms-possession case.</p>
+            <div class="event-tags"><span>PERSON</span><span>ARREST</span></div>
+          </article>
+          <article class="timeline-event event-4" data-event="4">
+            <span class="event-index">04 / EVIDENCE</span><span class="event-date">04 NOV 1993</span><h3>Primary charge sheet filed</h3>
+            <p>The primary charge sheet was filed against 189 accused.</p>
+            <div class="event-tags"><span>DOCUMENT</span><span>189 ACCUSED</span></div>
+          </article>
+          <article class="timeline-event event-5" data-event="5">
+            <span class="event-index">05 / INVESTIGATION</span><span class="event-date">19 NOV 1993</span><h3>Case moves to the CBI</h3>
+            <p>The investigation was formally handed to the Central Bureau of Investigation.</p>
+            <div class="event-tags"><span>CBI</span><span>INVESTIGATION</span></div>
+          </article>
+          <article class="timeline-event event-6" data-event="6">
+            <span class="event-index">06 / EXTRADITION</span><span class="event-date">11 NOV 2005</span><h3>Abu Salem extradited to India</h3>
+            <p>After detention in Lisbon, he was extradited to India.</p>
+            <div class="event-tags"><span>PERSON</span><span>2005</span></div>
+          </article>
+          <article class="timeline-event event-7" data-event="7">
+            <span class="event-index">07 / JUDGMENT</span><span class="event-date">12 SEP 2006</span><h3>TADA court begins judgment</h3>
+            <p>The court began delivering its judgment, with convictions and acquittals announced in stages.</p>
+            <div class="event-tags"><span>COURT</span><span>2006</span></div>
+          </article>
+          <article class="timeline-event event-8" data-event="8">
+            <span class="event-index">08 / FINAL MILESTONE</span><span class="event-date">30 JUL 2015</span><h3>Yakub Memon execution</h3>
+            <p>Yakub Memon was executed in Nagpur after his final plea was rejected.</p>
+            <div class="event-tags"><span>COURT</span><span>2015</span><span>CLOSED MILESTONE</span></div>
+          </article>
+
+          <div class="timeline-footer"><span><i></i> CIPHER / TRACE ACTIVE</span><span>SCROLL TO RECONSTRUCT</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow section" id="workflow">
+      <div class="section-label reveal">005 / HOW CIPHER THINKS</div>
+      <div class="workflow-heading reveal">
+        <h2>From raw evidence<br>to <em>connected intelligence.</em></h2>
+      </div>
+      <div class="workflow-steps">
+        <article class="workflow-step reveal"><span>01</span><h3>Ingest</h3><p>Bring reports, records and structured case data into one investigation.</p></article>
+        <article class="workflow-step reveal"><span>02</span><h3>Resolve</h3><p>Identify entities and normalize information that refers to the same subject.</p></article>
+        <article class="workflow-step reveal"><span>03</span><h3>Connect</h3><p>Build relationships between people, organizations, locations, events and evidence.</p></article>
+        <article class="workflow-step reveal"><span>04</span><h3>Investigate</h3><p>Explore the graph, ask questions and follow the strongest investigative paths.</p></article>
+        <article class="workflow-step reveal"><span>05</span><h3>Explain</h3><p>Turn discoveries into clear, traceable findings that investigators can review.</p></article>
+      </div>
+    </section>
+
+    <section class="manifesto section reveal">
+      <div class="section-label">007 / WHY CIPHER</div>
+      <blockquote>“The goal isn't to give investigators more information.<br><em>It's to make the information they already have connected.</em>”</blockquote>
+    </section>
+
+    
+
+    <section class="faq section" id="faq">
+      <div class="section-label reveal">008 / FAQ</div>
+      <div class="faq-list">
+        <details class="reveal"><summary><span>Q.001 / What is Cipher?</span><b>+</b></summary><p>Cipher is an AI-powered investigative intelligence platform designed to connect fragmented case information into a visual, searchable relationship graph.</p></details>
+        <details class="reveal"><summary><span>Q.002 / Is Cipher a replacement for investigators?</span><b>+</b></summary><p>No. Cipher is designed as an analytical assistant. Investigators remain responsible for validating evidence, interpreting context and making decisions.</p></details>
+        <details class="reveal"><summary><span>Q.003 / What makes the interface different?</span><b>+</b></summary><p>The product centers the investigation around relationships and evidence rather than forcing users to jump between disconnected dashboards.</p></details>
+        <details class="reveal"><summary><span>Q.004 / Can the design be adapted?</span><b>+</b></summary><p>Yes. Cipher is designed as a focused intelligence interface: simple enough to use quickly, but rich enough to reveal complex relationships.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <section class="auth-note" id="signup">
+      <div><span class="section-label">009 / START WITH CIPHER</span><h2>Create your workspace.<br><em>Follow the network.</em></h2></div>
+      <a class="button primary" href="#auth-signup" data-auth="signup">Sign up <span>↗</span></a>
+    </section>
+
+  <!-- CIPHER DUMMY AUTH -->
+  <section class="cipher-auth" id="cipherAuth" aria-hidden="true">
+    <div class="auth-visual" aria-hidden="true">
+      <div class="auth-grid"></div><div class="auth-orbit o1"></div><div class="auth-orbit o2"></div><div class="auth-orbit o3"></div>
+      <div class="auth-core">C</div><div class="auth-scanline"></div>
+      <div class="auth-trace t1"></div><div class="auth-trace t2"></div><div class="auth-trace t3"></div>
+      <div class="auth-visual-label"><span>CIPHER / SECURE ACCESS</span><b>INVESTIGATIVE INTELLIGENCE</b></div>
+    </div>
+    <div class="auth-panel">
+      <button class="auth-close" id="authClose" aria-label="Close authentication">×</button>
+      <div class="auth-panel-top"><a class="brand" href="#top"><span class="brand-mark">C</span><span>CIPHER</span></a><span class="auth-status"><i></i>SYSTEM READY</span></div>
+      <div class="auth-kicker" id="authKicker">AUTH / 001</div><h2 id="authTitle">Welcome back.</h2>
+      <p id="authSubtitle">Sign in to enter your investigative workspace.</p>
+      <div class="auth-switch"><button type="button" class="active" data-mode="login">LOG IN</button><button type="button" data-mode="signup">SIGN UP</button></div>
+      <form id="authForm" novalidate>
+        <label class="auth-field signup-only"><span>FULL NAME</span><input id="authName" type="text" autocomplete="name" placeholder="Investigator name"></label>
+        <label class="auth-field"><span>EMAIL</span><input id="authEmail" type="email" autocomplete="email" placeholder="investigator@cipher.local" required></label>
+        <label class="auth-field"><span>PASSWORD</span><input id="authPassword" type="password" autocomplete="current-password" placeholder="••••••••" minlength="4" required></label>
+        <label class="auth-field signup-only"><span>CONFIRM PASSWORD</span><input id="authConfirm" type="password" autocomplete="new-password" placeholder="••••••••"></label>
+        <div class="auth-meta login-only"><label><input type="checkbox"> <span>Remember session</span></label><button type="button" class="text-btn">Forgot password?</button></div>
+        <label class="auth-terms signup-only"><input type="checkbox" checked> <span>I agree to the Cipher workspace terms.</span></label>
+        <button class="auth-submit" type="submit"><span id="authSubmitText">ENTER CIPHER</span><b>↗</b></button>
+      </form>
+      <div class="auth-divider"><span>OR CONTINUE WITH</span></div><div class="auth-social"><button type="button">GOOGLE</button><button type="button">MICROSOFT</button></div>
+      <p class="auth-demo-note">Local demo session · no backend connection required.</p>
+    </div>
+  </section>
+
+  <!-- POST-AUTH CASE WORKSPACE -->
+  <section class="cipher-workspace" id="cipherWorkspace" aria-hidden="true">
+    <header class="workspace-nav"><div class="workspace-nav-left"><button class="workspace-back" id="workspaceBack" type="button" aria-label="Go back to previous workspace screen" title="Back to previous screen">← <span>BACK</span></button><a class="brand" href="#top"><span class="brand-mark">C</span><span>CIPHER</span></a></div><button class="workspace-case workspace-case-switcher" id="workspaceCaseSwitcher" type="button" aria-haspopup="dialog" aria-expanded="false"><span>CASE /</span> <b id="workspaceCaseNumber">BLACKBIRD_042</b> <i></i> <strong id="workspaceCaseTitle">ACTIVE INVESTIGATION</strong><em>⌄</em></button><button class="workspace-exit" id="workspaceExit">EXIT WORKSPACE</button></header>
+    <div class="workspace-body">
+      <aside class="workspace-sidebar"><div class="side-label">INVESTIGATION</div><button class="side-item active" data-view="cases">⌂ <span>Dashboard</span></button><button class="side-item" data-view="network">◎ <span>Network</span></button><button class="side-item" data-view="gis">⌖ <span>GIS</span></button><button class="side-item" data-view="timeline">⌁ <span>Timeline</span></button><button class="side-item" data-view="evidence">◈ <span>Evidence</span></button><button class="side-item">✦ <span>AI Investigator</span></button><div class="side-bottom"><span>148 ENTITIES</span><span>392 LINKS</span><span>67 EVIDENCE</span></div></aside>
+      <main class="case-room">
+        <section class="workspace-view active-view" id="casesView">
+          <div class="case-room-head"><div><span class="room-kicker">001 / CASE INTELLIGENCE</span><h1>Cases</h1><p>Active investigations, connected evidence and emerging risk signals.</p></div><button class="new-case" id="newCaseBtn">+ NEW CASE</button></div>
+          <div class="case-dashboard-overview" id="caseDashboardOverview">
+  <div class="dashboard-lead panel-editorial">
+    <div class="dashboard-lead-copy">
+      <span class="dashboard-eyebrow">ACTIVE INVESTIGATION / CASE 042</span>
+      <h2 id="dashboardCaseTitle">Blackbird <em>Network</em></h2>
+      <p>Cross-border communication and financial activity connected across people, organizations, locations and evidence.</p>
+      <div class="dashboard-actions"><button type="button" class="dashboard-primary" id="dashboardOpenActiveCase">OPEN INVESTIGATION ↗</button><span id="dashboardReviewed">LAST REVIEWED · 12 SEP 2026 / 16:20</span></div>
+    </div>
+    <div class="dashboard-signal"><span>RISK SIGNAL</span><strong id="dashboardRisk">HIGH</strong><i></i><small>3 unresolved relationships</small></div>
+  </div>
+  <div class="dashboard-metrics">
+    <div><span>ENTITIES</span><strong id="dashboardEntities">148</strong><small id="dashboardEntitiesNote">+12 this week</small></div>
+    <div><span>CONNECTIONS</span><strong id="dashboardLinks">392</strong><small id="dashboardLinksNote">38 new links</small></div>
+    <div><span>EVIDENCE</span><strong id="dashboardEvidence">67</strong><small>5 pending review</small></div>
+    <div><span>LOCATIONS</span><strong id="dashboardLocations">18</strong><small>7 active zones</small></div>
+  </div>
+  <div class="dashboard-activity panel-editorial">
+    <div class="dashboard-panel-head"><span>RECENT INTELLIGENCE</span><b>LIVE FEED</b></div>
+    <div class="dashboard-feed"><div><time>16:12</time><i></i><p><strong>New relationship detected</strong><span>A-17 → B-04 / network layer</span></p></div><div><time>15:48</time><i></i><p><strong>Location updated</strong><span>Sector 17, Punjab / waypoint</span></p></div><div><time>14:32</time><i></i><p><strong>Bank record found</strong><span>HDFC · account ending 8843</span></p></div></div>
+  </div>
+</div>
+<div class="case-discovery-bar" id="caseDiscoveryBar">
+  <div class="case-discovery-copy"><span class="dashboard-eyebrow">CASE DISCOVERY</span><strong>Find an investigation without rotating the room.</strong><small id="caseDiscoveryMeta">Showing featured investigations · search to narrow the desk</small></div>
+  <div class="case-discovery-controls">
+    <label class="case-search case-discovery-search"><span>⌕</span><input id="caseSearchInputTop" type="search" placeholder="Search cases, numbers, investigators…" autocomplete="off"></label>
+    <select id="caseStatusFilterTop"><option value="ALL">ALL STATUS</option><option value="ACTIVE">ACTIVE</option><option value="REVIEW">UNDER REVIEW</option><option value="CLOSED">CLOSED</option></select>
+    <select id="casePriorityFilterTop"><option value="ALL">ALL PRIORITY</option><option value="CRITICAL">CRITICAL</option><option value="HIGH">HIGH</option><option value="MEDIUM">MEDIUM</option><option value="LOW">LOW</option></select>
+  </div>
+</div>
+<div class="case-stage" id="caseStage"><div class="case-stage-grid"></div>
+          <div class="floating-case case-back c1" data-case="Operation Sandstorm"><div class="case-top"><span>CASE / 014</span><b>MEDIUM</b></div><h3>Operation Sandstorm</h3><p>Cross-border movement &amp; financial links</p><div class="case-stats"><span>62 entities</span><span>104 links</span></div></div>
+          <div class="floating-case case-back c2" data-case="Project Helix"><div class="case-top"><span>CASE / 021</span><b>LOW</b></div><h3>Project Helix</h3><p>Corporate ownership and proxy entities</p><div class="case-stats"><span>31 entities</span><span>58 links</span></div></div>
+          <div class="floating-case case-main c3" data-case="Blackbird Network"><div class="case-top"><span>CASE / 042</span><b class="high">HIGH RISK</b></div><div class="case-index">BLACKBIRD_042</div><h3>Blackbird Network</h3><p>A connected criminal network spanning people, organizations, locations and financial evidence.</p><div class="case-metrics"><div><strong>148</strong><span>ENTITIES</span></div><div><strong>392</strong><span>CONNECTIONS</span></div><div><strong>67</strong><span>EVIDENCE</span></div><div><strong>82</strong><span>RISK</span></div></div><div class="case-footer"><span>LAST UPDATED · 14:32</span><button>OPEN CASE ↗</button></div></div>
+          <div class="floating-case case-back c4" data-case="Silent Harbour"><div class="case-top"><span>CASE / 009</span><b>CLOSED</b></div><h3>Silent Harbour</h3><p>Logistics network reconstruction</p><div class="case-stats"><span>19 entities</span><span>41 links</span></div></div>
+          <div class="floating-case case-back c5" data-case="Project Dawn"><div class="case-top"><span>CASE / 033</span><b>MEDIUM</b></div><h3>Project Dawn</h3><p>Evidence-led entity resolution</p><div class="case-stats"><span>47 entities</span><span>83 links</span></div></div>
+          </div>
+          <section class="all-cases-panel" id="allCasesPanel" aria-label="All investigations">
+            <div class="all-cases-head">
+              <div><span class="dashboard-eyebrow">INVESTIGATION INDEX</span><h2>All investigations</h2><p>Search, filter and open any case without changing the rest of the workspace.</p></div>
+              <div class="all-cases-controls"><label class="case-search"><span>⌕</span><input id="caseSearchInput" type="search" placeholder="Search cases, numbers, investigators…" autocomplete="off"></label><select id="caseStatusFilter"><option value="ALL">ALL STATUS</option><option value="ACTIVE">ACTIVE</option><option value="REVIEW">UNDER REVIEW</option><option value="CLOSED">CLOSED</option></select><select id="casePriorityFilter"><option value="ALL">ALL PRIORITY</option><option value="CRITICAL">CRITICAL</option><option value="HIGH">HIGH</option><option value="MEDIUM">MEDIUM</option><option value="LOW">LOW</option></select></div>
+            </div>
+            <div class="all-cases-meta"><span id="caseResultsCount">0 investigations</span><span>SELECT A CASE TO ENTER ITS WORKSPACE</span></div>
+            <div class="case-index-list" id="caseIndexList"></div>
+            <div class="case-pagination" id="casePagination"></div>
+          </section>
+          <div class="workspace-footer"><span><i></i> CIPHER WORKSPACE / CASE INDEX</span><span>DRAG / RELEASE FOR MOMENTUM · CLICK TO FOCUS</span></div>
+        </section>
+
+        <section class="workspace-view network-view" id="networkView" aria-label="Network investigation workspace">
+          <div class="network-room-head">
+            <div><span class="room-kicker">002 / RELATIONSHIP INTELLIGENCE</span><h1>Network</h1><p>Build, inspect and trace the entities inside the active investigation.</p></div>
+            <div class="network-head-actions">
+              <button class="csv-upload-btn" id="mainCsvUploadBtn" type="button"><span class="upload-icon">↥</span><span><b>UPLOAD CSV</b><small>Import investigation data</small></span></button>
+              <div class="network-head-status"><i></i><span>GRAPH READY</span><b>CASE / BLACKBIRD_042</b></div>
+            </div>
+          </div>
+
+          <input id="csvFileInput" class="csv-file-input" type="file" accept=".csv,text/csv" aria-label="Upload CSV file" />
+          <div class="network-workbench">
+            <aside class="network-tools" aria-label="Network tools">
+              <div class="tool-heading"><span>GRAPH TOOLS</span><small>EDIT</small></div>
+              <button class="network-tool primary-tool" id="addNodeBtn"><span class="tool-icon node-glow" aria-hidden="true"><i></i></span><span><b>ADD NODE</b><small>Create an entity or evidence point</small></span></button>
+              <button class="network-tool danger-tool" id="deleteNodeBtn"><span class="tool-icon">−</span><span><b>DELETE NODE</b><small>Remove the selected node</small></span></button>
+              <div class="tool-divider"></div>
+              <button class="network-tool compact-tool" type="button"><span class="tool-icon">⌗</span><span><b>FIT VIEW</b><small>Center the investigation</small></span></button>
+              <button class="network-tool compact-tool" type="button"><span class="tool-icon">⊙</span><span><b>RESET</b><small>Return to default view</small></span></button>
+              <div class="tool-note"><span class="note-dot"></span><div><b>GRAPH LAYER EMPTY</b><p>The network canvas is reserved for the live relationship graph.</p></div></div>
+            </aside>
+
+            <div class="network-canvas-shell">
+              <div class="network-canvas-top"><span>RELATIONSHIP MAP</span><span>BLACKBIRD_042 · 0 NODES · 0 LINKS</span></div>
+              <div class="network-empty-canvas" id="networkCanvasPlaceholder">
+                <div class="canvas-crosshair horizontal"></div><div class="canvas-crosshair vertical"></div>
+                <div class="network-empty-center"><span class="empty-mark">◎</span><b>NETWORK CANVAS</b><small>Reserved for node connections &amp; relationship visualization</small></div>
+                <div class="canvas-corner tl"></div><div class="canvas-corner tr"></div><div class="canvas-corner bl"></div><div class="canvas-corner br"></div>
+              </div>
+              <div class="network-canvas-footer"><span>SCROLL / PAN / ZOOM WILL CONTROL THE GRAPH</span><span><i></i> VISUALIZATION LAYER READY</span></div>
+            </div>
+
+            <aside class="network-inspector" id="networkInspector">
+              <div class="inspector-head"><div><span>INSPECTOR</span><h2>Node information</h2></div><button type="button" aria-label="Inspector menu">•••</button></div>
+              <div class="inspector-tabs"><button class="active" type="button">NODE</button><button type="button">LINKS</button><button type="button">SOURCE</button></div>
+              <div class="inspector-scroll">
+                <div class="inspector-empty"><span class="inspector-icon">◎</span><b>NO NODE SELECTED</b><p>Select a node in the graph to inspect identity, source records, timestamps and direct relationships.</p></div>
+                <div class="inspector-section"><div class="inspector-section-title"><span>IDENTITY</span><small>—</small></div><div class="inspector-row"><span>NAME</span><b>—</b></div><div class="inspector-row"><span>TYPE</span><b>—</b></div><div class="inspector-row"><span>REFERENCE</span><b>—</b></div></div>
+                <div class="inspector-section"><div class="inspector-section-title"><span>RELATIONSHIPS</span><small>0</small></div><div class="inspector-placeholder">Direct connections will appear here.</div></div>
+                <div class="inspector-section"><div class="inspector-section-title"><span>SOURCE DATA</span><small>0</small></div><div class="inspector-placeholder">CDR, bank, vehicle, location and evidence records will appear here.</div></div>
+              </div>
+              <div class="inspector-scrollbar"><span></span></div>
+            </aside>
+          </div>
+          <div class="workspace-footer"><span><i></i> CIPHER WORKSPACE / NETWORK EDITOR</span><span>SELECT A NODE TO INSPECT</span></div>
+        </section>
+
+        <section class="workspace-view gis-view" id="gisView" aria-label="GIS investigation workspace">
+          <div class="gis-room-head">
+            <div><span class="room-kicker">003 / GEOSPATIAL INTELLIGENCE</span><h1>GIS</h1><p>Search, inspect and mark locations across the active investigation.</p></div>
+            <div class="gis-head-tools">
+              <div class="gis-coordinates"><span>COORDINATES</span><b id="gisCoordinates">— · —</b></div>
+            </div>
+          </div>
+
+          <div class="gis-workbench">
+            <aside class="gis-tools" aria-label="GIS tools">
+              <div class="tool-heading"><span>MAP TOOLS</span><small>EDIT</small></div>
+              <button class="gis-tool gis-waypoint-tool" id="gisAddWaypoint" type="button"><span class="tool-icon" aria-hidden="true">📍</span><span><b>ADD WAYPOINT</b><small>Mark an investigative location</small></span></button>
+              <button class="gis-tool" id="gisSearchFocusBtn" type="button"><span class="tool-icon">⌕</span><span><b>SEARCH</b><small>Find an entity or place</small></span></button>
+              <div class="gis-tool-note"><i></i><div><b>MAP LOCKED</b><p>Unlock the map to pan, zoom and place waypoints.</p></div></div>
+            </aside>
+
+            <div class="gis-map-column">
+              <label class="gis-search gis-map-search"><span>⌕</span><input id="gisSearchInput" type="search" placeholder="Search person, place, address, evidence…" autocomplete="off"><kbd>⌘ K</kbd></label>
+              <div class="gis-map-shell">
+                <div class="gis-map-toolbar">
+                  <span>GEOSPATIAL MAP / LIVE LAYER</span>
+                </div>
+              <div class="gis-map-placeholder locked" id="gisMapPlaceholder" tabindex="0" aria-label="Reserved GIS map area">
+                <div class="gis-grid"></div><div class="gis-crosshair h"></div><div class="gis-crosshair v"></div>
+                <div class="gis-map-modes"><button type="button" class="gis-mode active">INDIA</button><button type="button" class="gis-mode">WORLD</button></div>
+                <div class="gis-map-empty"><span>◎</span><b>GIS MAP LAYER</b><small>Reserved for the integrated geospatial map</small></div>
+                <button class="gis-lock-button" id="gisLockButton" type="button"><span>▣</span><b id="gisLockText">UNLOCK MAP</b><small>Map interaction locked</small></button>
+                <div class="gis-map-corner tl"></div><div class="gis-map-corner tr"></div><div class="gis-map-corner bl"></div><div class="gis-map-corner br"></div>
+              </div>
+                <div class="gis-map-footer"><span>MAP INTERACTION / PAN · ZOOM · SELECT</span><span><i></i> INTEGRATION SLOT READY</span></div>
+              </div>
+            </div>
+
+            <aside class="gis-inspector" id="gisInspector">
+              <div class="gis-inspector-head"><div><span>LOCATION INSPECTOR</span><h2 id="gisInfoTitle">No location selected</h2></div><button type="button" id="gisInspectorMenu">•••</button></div>
+              <div class="gis-inspector-body" id="gisInspectorBody">
+                <div class="gis-selected-state"><div><b>SELECT A MAP NODE</b><p>Click a location or map node to reveal its investigative information here.</p></div></div>
+                <div class="gis-info-section"><div class="gis-info-title"><span>LOCATION</span><small>—</small></div><div class="gis-info-row"><span>NAME</span><b>—</b></div><div class="gis-info-row"><span>TYPE</span><b>—</b></div><div class="gis-info-row"><span>COORDINATES</span><b>—</b></div></div>
+                <div class="gis-info-section"><div class="gis-info-title"><span>CASE CONTEXT</span><small>—</small></div><div class="gis-info-placeholder">Node-linked information will appear here when the GIS layer is integrated.</div></div>
+                <div class="gis-info-section"><div class="gis-info-title"><span>SOURCES</span><small>0</small></div><div class="gis-info-placeholder">CDR, evidence, vehicle, financial and other location-linked records will appear here.</div></div>
+              </div>
+              <div class="gis-inspector-scrollbar"><span></span></div>
+            </aside>
+          </div>
+          <div class="workspace-footer"><span><i></i> CIPHER WORKSPACE / GIS EDITOR</span><span>SELECT A MAP NODE TO INSPECT</span></div>
+        </section>
+
+        <section class="workspace-view evidence-workspace" id="evidenceView" aria-label="Case report and evidence workspace">
+          <div class="evidence-screen-head">
+            <div><span class="room-kicker">005 / CASE REPORT &amp; EVIDENCE</span><h1>Case Report</h1><p>Capture the investigation record, organize evidence, and export a print-ready case sheet.</p></div>
+            <div class="evidence-head-status"><i></i><span>REPORT BUILDER READY</span><b id="reportCaseStatus">CASE / BBC-1 / 1993</b></div>
+          </div>
+
+          <div class="report-toolbar">
+            <div class="report-toolbar-left">
+              <button type="button" class="report-action" id="reportAddEvidence">+ ADD EVIDENCE</button>
+            </div>
+            <div class="report-toolbar-right">
+              <span class="report-save-state"><i></i><span id="reportSaveState">LOCAL DRAFT</span></span>
+              <button type="button" class="report-action pdf" id="reportPrintPdf">PRINT / EXPORT PDF ↗</button>
+            </div>
+          </div>
+
+          <div class="case-report-sheet" id="caseReportSheet">
+            <section class="report-cover-card report-section-card">
+              <div class="report-cover-main">
+                <span class="report-eyebrow">CIPHER / INVESTIGATIVE CASE SHEET</span>
+                <h2 id="reportTitle">1993 Bombay Serial Blasts</h2>
+                <p id="reportSubtitle">Historical case reference · 12 March 1993 · Mumbai / Bombay</p>
+                <div class="report-status-row"><span class="report-status danger">HIGH PRIORITY</span><span class="report-status">HISTORICAL REFERENCE</span><span class="report-status">REPORT READY</span></div>
+              </div>
+              <div class="report-cover-meta">
+                <label>CASE ID<input data-report-field="caseId" value="BBC-1 / 1993"></label>
+                <label>INVESTIGATING AGENCY<input data-report-field="agency" value="CBI / State Police"></label>
+                <label>CASE TYPE<input data-report-field="caseType" value="Serial Bombing / Terrorism"></label>
+                <label>DATE OF INCIDENT<input data-report-field="incidentDate" value="12 March 1993"></label>
+              </div>
+            </section>
+
+            <section class="report-kpi-grid">
+              <div class="report-kpi"><span>FATALITIES</span><b data-report-value="fatalities">257</b><small>reported in Supreme Court record</small></div>
+              <div class="report-kpi"><span>INJURED</span><b data-report-value="injured">713</b><small>reported in Supreme Court record</small></div>
+              <div class="report-kpi"><span>BLAST LOCATIONS</span><b data-report-value="locations">12</b><small>locations listed in judgment</small></div>
+              <div class="report-kpi"><span>PROPERTY DAMAGE</span><b>₹27 Cr</b><small>approximately</small></div>
+              <div class="report-kpi"><span>POLICE CASES</span><b>27</b><small>initially registered</small></div>
+              <div class="report-kpi"><span>CHARGE-SHEET</span><b>189</b><small>accused named in 1993 filing</small></div>
+            </section>
+
+            <div class="report-grid-two">
+              <section class="report-section-card">
+                <div class="report-section-head"><div><span>01 / CASE OVERVIEW</span><h3>Incident profile</h3></div><span class="report-count">EDITABLE</span></div>
+                <div class="report-form-grid two">
+                  <label>Incident location<input data-report-field="location" value="Mumbai / Bombay and surrounding areas"></label>
+                  <label>Time window<input data-report-field="timeWindow" value="13:33 – 15:40 (recorded judicial account)"></label>
+                  <label>Primary classification<input data-report-field="classification" value="Coordinated serial bombings"></label>
+                  <label>Investigation reference<input data-report-field="investigationRef" value="RC 1(S)/93/STF/BB"></label>
+                </div>
+              </section>
+
+              <section class="report-section-card">
+                <div class="report-section-head"><div><span>02 / LEGAL &amp; PROCEDURAL RECORD</span><h3>Case status</h3></div></div>
+                <div class="legal-grid">
+                  <div><span>INITIAL CASES</span><b>27 criminal cases</b></div>
+                  <div><span>COMPOSITE CHARGE-SHEET</span><b>04 Nov 1993</b></div>
+                  <div><span>TRANSFER TO CBI</span><b>19 Nov 1993</b></div>
+                  <div><span>COURT CASE</span><b>BBC-1 of 1993</b></div>
+                  <div><span>TRIAL START</span><b>14 Jul 1994</b></div>
+                  <div><span>CHARGES FRAMED</span><b>10 Apr 1995</b></div>
+                </div>
+                <div class="legal-notes"><span>RECORDED LEGAL FRAMEWORK</span><p>Historical proceedings referenced provisions of the IPC, TADA, Arms Act, Explosive Substances Act and related statutes. The exact legal counts should be preserved from the source documents when this case is entered into Cipher.</p></div>
+              </section>
+            </div>
+
+            <section class="report-section-card">
+              <div class="report-section-head"><div><span>03 / EVIDENCE REGISTER</span><h3>Documents, records and source material</h3></div><button type="button" class="report-mini-btn" id="reportAddEvidenceInline">+ ADD EVIDENCE</button></div>
+              <div class="evidence-register" id="reportEvidenceList">
+                <div class="evidence-row"><span class="evidence-icon">DOC</span><div><b>Supreme Court judgment — Yakub Abdul Razak Memon v. State of Maharashtra</b><small>21 Mar 2013 · judicial record · high authority</small></div><em>VERIFIED</em></div>
+                <div class="evidence-row"><span class="evidence-icon">DOC</span><div><b>CBI case record / RC 1(S)/93/STF/BB</b><small>Investigation reference · transfer and supplementary reports</small></div><em>CASE RECORD</em></div>
+                <div class="evidence-row"><span class="evidence-icon">MAP</span><div><b>Incident location register</b><small>12 locations recorded in the Supreme Court judgment</small></div><em>GIS READY</em></div>
+              </div>
+            </section>
+
+            <div class="report-summary-cta">
+              <div>
+                <span>CASE SUMMARY</span>
+                <p>Generate a consolidated case summary from the completed investigation record.</p>
+              </div>
+              <button type="button" class="report-summary-btn" id="reportCaseSummaryBtn">CASE SUMMARY ↗</button>
+            </div>
+
+            <footer class="report-final-note"><b>CIPHER CASE REPORT</b><span>Generated from the current case workspace · verify entries against original evidence before official use.</span><strong id="reportGeneratedAt">LOCAL DRAFT</strong></footer>
+          </div>
+        </section>
+
+        <section class="workspace-view timeline-workspace" id="timelineView" aria-label="Timeline investigation workspace">
+          <div class="timeline-screen-head">
+            <div><span class="room-kicker">004 / TEMPORAL INTELLIGENCE</span><h1>Timeline</h1><p>Follow the investigation as events surface, connect and change the shape of the case.</p></div>
+            <div class="timeline-screen-status"><i></i><span id="workspaceTimelineStatus">TRACE RUNNING</span><b>CASE / BLACKBIRD_042</b></div>
+          </div>
+
+          <div class="timeline-workspace-grid" id="workspaceTimelineGrid">
+            <aside class="timeline-side-rail">
+              <div class="timeline-rail-label">TRACE CONTROLS</div>
+              <button type="button" class="timeline-rail-btn active" id="timelineReplayBtn"><span>↻</span><b>REPLAY TRACE</b><small>Reveal events in sequence</small></button>
+              <button type="button" class="timeline-rail-btn" id="timelineClearBtn"><span>×</span><b>CLEAR TRACE</b><small>Reset the reconstruction</small></button><button type="button" class="timeline-rail-btn" id="timelineResetLayoutBtn"><span>⌖</span><b>RESET LAYOUT</b><small>Return cards to their stations</small></button>
+              <div class="timeline-rail-rule"></div>
+              <div class="timeline-rail-stat"><span>EVENTS</span><b id="timelineEventCount">08</b></div>
+              <div class="timeline-rail-stat"><span>SPAN</span><b>1993 — 2015</b></div>
+              <div class="timeline-rail-note"><i></i><div><b>LIVE TRACE</b><p>Cards and connections are revealed from the center outward.</p></div></div>
+            </aside>
+
+            <div class="timeline-stage-scroll" id="timelineStageScroll"><div class="timeline-orbit-stage" id="workspaceTimelineStage">
+              <div class="timeline-stage-grid"></div>
+              <div class="timeline-stage-vignette"></div>
+              <div class="timeline-stage-hud top-left"><span>CASE / MB-1993</span><b>SEQUENCE MAP</b></div>
+              <div class="timeline-stage-hud top-right"><span id="timelineSequenceLabel">00 / 08</span><b id="timelineSequenceState">AWAITING TRACE</b></div>
+              <svg class="timeline-connection-svg" id="timelineConnectionSvg" viewBox="0 0 1200 720" preserveAspectRatio="none" aria-hidden="true"></svg>
+
+              <div class="timeline-snake-grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="timeline-sequence-cursor" id="timelineSequenceCursor" aria-hidden="true">
+                <span class="timeline-cursor-dot"></span>
+              </div>
+              <div class="timeline-sequence-badge"><span>4 × 4</span><b>SNAKE SEQUENCE</b></div>
+              <div class="timeline-case-core" id="timelineCaseCore" tabindex="0" aria-hidden="true"></div>
+
+              <div class="timeline-event-card te-1" data-event="1"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">01 / ORIGIN</span><span class="timeline-card-date">12 MAR 1993</span><h3>Coordinated blasts strike Mumbai</h3><p>A series of explosions hit locations across the city.</p><div class="timeline-card-foot"><b>257</b><span>fatalities</span><b>713</b><span>injured</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 01 / DETAIL</span><span class="timeline-card-date">12 MAR 1993</span><h3>Coordinated blasts strike Mumbai</h3><p>A series of explosions hit locations across the city.</p><div class="timeline-card-foot"><b>257</b><span>fatalities</span><b>713</b><span>injured</span></div></div></div></div>
+              <div class="timeline-event-card te-2" data-event="2"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">02 / IMPACT</span><span class="timeline-card-date">12 MAR 1993</span><h3>Multiple targets, one sequence</h3><p>Records describe coordinated explosions across major city locations.</p><div class="timeline-card-tags"><span>MUMBAI</span><span>CASE OPENED</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 02 / DETAIL</span><span class="timeline-card-date">12 MAR 1993</span><h3>Multiple targets, one sequence</h3><p>Records describe coordinated explosions across major city locations.</p><div class="timeline-card-tags"><span>MUMBAI</span><span>CASE OPENED</span></div></div></div></div>
+              <div class="timeline-event-card te-3" data-event="3"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">03 / CASE DEVELOPMENT</span><span class="timeline-card-date">19 APR 1993</span><h3>First major arrest milestone</h3><p>Sanjay Dutt was arrested in a related arms-possession case.</p><div class="timeline-card-tags"><span>PERSON</span><span>ARREST</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 03 / DETAIL</span><span class="timeline-card-date">19 APR 1993</span><h3>First major arrest milestone</h3><p>Sanjay Dutt was arrested in a related arms-possession case.</p><div class="timeline-card-tags"><span>PERSON</span><span>ARREST</span></div></div></div></div>
+              <div class="timeline-event-card te-4" data-event="4"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">04 / EVIDENCE</span><span class="timeline-card-date">04 NOV 1993</span><h3>Primary charge sheet filed</h3><p>The primary charge sheet was filed against 189 accused.</p><div class="timeline-card-tags"><span>DOCUMENT</span><span>189 ACCUSED</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 04 / DETAIL</span><span class="timeline-card-date">04 NOV 1993</span><h3>Primary charge sheet filed</h3><p>The primary charge sheet was filed against 189 accused.</p><div class="timeline-card-tags"><span>DOCUMENT</span><span>189 ACCUSED</span></div></div></div></div>
+              <div class="timeline-event-card te-5" data-event="5"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">05 / INVESTIGATION</span><span class="timeline-card-date">19 NOV 1993</span><h3>Case moves to the CBI</h3><p>The investigation was formally handed to the Central Bureau of Investigation.</p><div class="timeline-card-tags"><span>CBI</span><span>INVESTIGATION</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 05 / DETAIL</span><span class="timeline-card-date">19 NOV 1993</span><h3>Case moves to the CBI</h3><p>The investigation was formally handed to the Central Bureau of Investigation.</p><div class="timeline-card-tags"><span>CBI</span><span>INVESTIGATION</span></div></div></div></div>
+              <div class="timeline-event-card te-6" data-event="6"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">06 / EXTRADITION</span><span class="timeline-card-date">11 NOV 2005</span><h3>Abu Salem extradited to India</h3><p>After detention in Lisbon, he was extradited to India.</p><div class="timeline-card-tags"><span>PERSON</span><span>2005</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 06 / DETAIL</span><span class="timeline-card-date">11 NOV 2005</span><h3>Abu Salem extradited to India</h3><p>After detention in Lisbon, he was extradited to India.</p><div class="timeline-card-tags"><span>PERSON</span><span>2005</span></div></div></div></div>
+              <div class="timeline-event-card te-7" data-event="7"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">07 / JUDGMENT</span><span class="timeline-card-date">12 SEP 2006</span><h3>TADA court begins judgment</h3><p>The court began delivering its judgment, with convictions and acquittals announced in stages.</p><div class="timeline-card-tags"><span>COURT</span><span>2006</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 07 / DETAIL</span><span class="timeline-card-date">12 SEP 2006</span><h3>TADA court begins judgment</h3><p>The court began delivering its judgment, with convictions and acquittals announced in stages.</p><div class="timeline-card-tags"><span>COURT</span><span>2006</span></div></div></div></div>
+              <div class="timeline-event-card te-8" data-event="8"><div class="timeline-flip-inner"><div class="timeline-card-face timeline-card-front"><span class="timeline-card-line"></span><span class="timeline-card-index">08 / FINAL MILESTONE</span><span class="timeline-card-date">30 JUL 2015</span><h3>Yakub Memon execution</h3><p>Yakub Memon was executed in Nagpur after his final plea was rejected.</p><div class="timeline-card-tags"><span>COURT</span><span>CLOSED MILESTONE</span></div></div><div class="timeline-card-face timeline-card-back"><span class="timeline-card-index">EVENT 08 / DETAIL</span><span class="timeline-card-date">30 JUL 2015</span><h3>Yakub Memon execution</h3><p>Yakub Memon was executed in Nagpur after his final plea was rejected.</p><div class="timeline-card-tags"><span>COURT</span><span>CLOSED MILESTONE</span></div></div></div></div>
+
+              <div class="timeline-stage-footer"><span><i></i> CIPHER / TEMPORAL GRAPH</span><span>FIXED SNAKE SEQUENCE · CLICK AFTER TRACE</span></div>
+            </div></div>
+
+            <aside class="timeline-inspector" id="timelineInspector">
+              <div class="timeline-inspector-head"><div><span>EVENT INSPECTOR</span><h2 id="timelineInspectorTitle">No event selected</h2></div><button type="button">•••</button></div>
+              <div class="timeline-inspector-body" id="timelineInspectorBody"><div class="timeline-inspector-empty"><span>◎</span><b>SELECT A TRACE NODE</b><p>Choose an event from the sequence to inspect its date, classification and investigative context.</p></div></div>
+              <div class="timeline-inspector-scrollbar"><span></span></div>
+            </aside>
+          </div>
+          <div class="workspace-footer"><span><i></i> CIPHER WORKSPACE / TIMELINE ENGINE</span><span id="timelineFooterState">TRACE READY</span></div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+  <section class="node-modal" id="nodeModal" aria-hidden="true">
+    <div class="node-modal-backdrop" data-node-close></div>
+    <div class="case-create-modal" id="caseCreateModal" aria-hidden="true"><div class="case-create-backdrop" data-case-close></div><form class="case-create-dialog" id="caseCreateForm"><button type="button" class="case-create-close" id="caseCreateClose" aria-label="Close">×</button><div class="case-create-kicker">CASES / NEW INVESTIGATION</div><h2>Open a new case</h2><p>Create a case shell now. Entities, evidence and links can be added from the workspace.</p><div class="case-create-grid"><label><span>CASE NAME</span><input name="caseName" required placeholder="e.g. Operation Monsoon"></label><label><span>RISK</span><select name="caseRisk"><option>MEDIUM</option><option>HIGH RISK</option><option>LOW</option></select></label><label class="wide"><span>DESCRIPTION</span><textarea name="caseDescription" rows="3" placeholder="Short investigative summary"></textarea></label><label><span>INITIAL ENTITIES</span><input name="caseEntities" type="number" min="0" value="0"></label></div><div class="case-create-actions"><button type="button" data-case-close class="case-create-secondary">CANCEL</button><button type="submit" class="case-create-primary">CREATE CASE ↗</button></div></form></div><div class="node-dialog" role="dialog" aria-modal="true" aria-labelledby="nodeModalTitle">
+      <button class="node-close" id="nodeModalClose" type="button" aria-label="Close">×</button>
+      <div class="node-dialog-head"><div><span class="room-kicker">NETWORK / NEW ENTITY</span><h2 id="nodeModalTitle">Add a node</h2><p>Capture the smallest useful unit of the investigation, then connect it to the evidence trail.</p></div><div class="node-step-counter"><b id="nodeStepNumber">01</b><span>/ 04</span></div></div>
+      <div class="node-stepper"><span class="active" data-step-dot="1">01 <b>IDENTITY</b></span><i></i><span data-step-dot="2">02 <b>SOURCE</b></span><i></i><span data-step-dot="3">03 <b>TIME</b></span><i></i><span data-step-dot="4">04 <b>LINK</b></span></div>
+      <form id="nodeForm">
+        <div class="node-step active" data-step="1">
+          <div class="step-title"><span>01 / WHAT IS THIS NODE?</span><b>ENTITY IDENTITY</b></div>
+          <div class="node-type-grid">
+            <button type="button" class="node-type active" data-node-type="person"><span>◎</span><b>PERSON</b><small>Identity / individual</small></button>
+            <button type="button" class="node-type" data-node-type="organization"><span>□</span><b>ORGANIZATION</b><small>Company / group</small></button>
+            <button type="button" class="node-type" data-node-type="place"><span>⌖</span><b>PLACE</b><small>Location / address</small></button>
+            <button type="button" class="node-type" data-node-type="evidence"><span>◈</span><b>EVIDENCE</b><small>Record / document</small></button>
+          </div>
+          <div class="node-fields two-col"><label><span>NAME / LABEL</span><input name="nodeName" type="text" placeholder="e.g. Subject 047" required></label><label><span>AADHAAR / ID REFERENCE</span><input name="nodeId" type="text" placeholder="XXXX XXXX 1234"><small>Use a masked reference in the demo.</small></label></div>
+        </div>
+        <div class="node-step" data-step="2">
+          <div class="step-title"><span>02 / WHAT RECORD SUPPORTS IT?</span><b>SOURCE CLASSIFICATION</b></div>
+          <div class="source-grid"><button type="button" class="source-choice active"><span>CDR</span><small>Call detail records</small></button><button type="button" class="source-choice"><span>BANK</span><small>Bank statement</small></button><button type="button" class="source-choice"><span>VEHICLE</span><small>Plate / car</small></button><button type="button" class="source-choice"><span>PLACE</span><small>Location data</small></button><button type="button" class="source-choice"><span>DOCUMENT</span><small>Report / file</small></button><button type="button" class="source-choice"><span>OTHER</span><small>Custom source</small></button></div>
+          <div class="csv-dropzone" id="nodeCsvDropzone">
+            <div class="csv-drop-icon">↥</div>
+            <div class="csv-drop-copy"><b>UPLOAD SOURCE DATA</b><span>Bring in a specific CSV file for this node or evidence source.</span><small>CSV only · local preview · ready for graph ingestion</small></div>
+            <button type="button" class="csv-browse-btn" id="nodeCsvUploadBtn">BROWSE CSV <span>↗</span></button>
+          </div>
+          <div class="csv-file-status" id="csvFileStatus" aria-live="polite"><span class="status-dot"></span><div><b>NO FILE ATTACHED</b><small>Select a CSV to preview its structure.</small></div></div>
+          <label class="node-field-wide"><span>REFERENCE / SOURCE ID</span><input name="sourceRef" type="text" placeholder="e.g. CDR-1993-047-A"></label>
+        </div>
+        <div class="node-step" data-step="3">
+          <div class="step-title"><span>03 / WHEN DID THIS HAPPEN?</span><b>EVENT TIME</b></div>
+          <div class="node-fields two-col"><label><span>DATE</span><input name="eventDate" type="date"></label><label><span>TIME</span><input name="eventTime" type="time"></label></div>
+          <div class="node-fields two-col"><label><span>TIMEZONE</span><select name="timezone"><option>IST · UTC+05:30</option><option>UTC</option><option>Local time</option></select></label><label><span>EVENT LABEL</span><input name="eventLabel" type="text" placeholder="e.g. Call placed"></label></div>
+          <div class="time-confidence"><span>TIME CONFIDENCE</span><button type="button" class="confidence active">EXACT</button><button type="button" class="confidence">APPROX.</button><button type="button" class="confidence">UNKNOWN</button></div>
+        </div>
+        <div class="node-step" data-step="4">
+          <div class="step-title"><span>04 / LINK THIS NODE</span><b>RELATIONSHIP</b></div>
+          <div class="link-panel"><div class="link-symbol">↗</div><div><b>CONNECT AFTER CREATION</b><p>Choose how this node should relate to an existing entity. The live graph will render the connection here.</p></div></div>
+          <div class="node-fields two-col"><label><span>RELATIONSHIP TYPE</span><select name="relationType"><option>Associated with</option><option>Called</option><option>Paid</option><option>Owned</option><option>Located at</option><option>Travelled to</option><option>Referenced by</option></select></label><label><span>TARGET NODE</span><input name="targetNode" type="text" placeholder="Select existing node"></label></div>
+          <label class="node-field-wide"><span>INVESTIGATOR NOTE</span><textarea name="note" rows="3" placeholder="Why this connection matters..."></textarea></label>
+        </div>
+        <div class="node-dialog-footer"><button type="button" class="node-cancel" data-node-close>CANCEL</button><div class="node-nav"><button type="button" class="node-back" id="nodeBack">← BACK</button><button type="button" class="node-next" id="nodeNext">NEXT <span>→</span></button></div></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <a class="brand" href="#top"><span class="brand-mark">C</span><span>CIPHER</span></a>
+      <p>Investigative intelligence,<br>connected.</p>
+      <a class="footer-link" href="#top">Back to top ↑</a>
+    </div>
+    <div class="footer-bottom"><span>© 2026 CIPHER</span><span>AI-POWERED INVESTIGATIVE PLATFORM</span><span>BUILT FOR RESPONSIBLE ANALYSIS</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+(() => {
+  const canvas = document.getElementById('cipherParticleField');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w=0,h=0,dpr=Math.min(window.devicePixelRatio||1,2),particles=[],raf=0,last=0;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function resize(){
+    w=innerWidth; h=innerHeight; dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=Math.floor(w*dpr); canvas.height=Math.floor(h*dpr); canvas.style.width=w+'px'; canvas.style.height=h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const count=Math.min(84,Math.max(42,Math.floor((w*h)/23000)));
+    particles=Array.from({length:count},(_,i)=>({
+      x:Math.random()*w,y:Math.random()*h,
+      vx:(Math.random()-.5)*.23,vy:(Math.random()-.5)*.23,
+      speed:.45+Math.random()*.75, r:.42+Math.random()*1.15,
+      phase:Math.random()*Math.PI*2, turn:Math.random()>.5?1:-1,
+      hue:Math.random(), seed:i
+    }));
+  }
+  function frame(t){
+    const dt=Math.min(32,(t-last)||16)/16; last=t;
+    ctx.clearRect(0,0,w,h);
+    for(const p of particles){
+      p.phase += .0022*p.speed*dt;
+      // Very slow wandering acceleration gives genuinely free/random motion without jitter.
+      p.vx += Math.sin(p.phase*1.7+p.seed)*.0020*p.turn*dt;
+      p.vy += Math.cos(p.phase*1.35+p.seed*.7)*.0020*dt;
+      const mag=Math.hypot(p.vx,p.vy)||1;
+      const target=.16*p.speed;
+      p.vx += (p.vx/mag*target-p.vx)*.012*dt;
+      p.vy += (p.vy/mag*target-p.vy)*.012*dt;
+      p.x += p.vx*dt*4.5; p.y += p.vy*dt*4.5;
+      if(p.x<-24)p.x=w+24;if(p.x>w+24)p.x=-24;if(p.y<-24)p.y=h+24;if(p.y>h+24)p.y=-24;
+      const pulse=.34+(Math.sin(p.phase*2.2+p.seed)*.18+.18);
+      const glow=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5.5);
+      glow.addColorStop(0,`rgba(217,255,85,${pulse*.16})`);glow.addColorStop(1,'rgba(217,255,85,0)');
+      ctx.fillStyle=glow;ctx.beginPath();ctx.arc(p.x,p.y,p.r*5.5,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=`rgba(217,255,85,${pulse*.52})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+    }
+    for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){
+      const a=particles[i],b=particles[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+      if(d<78){ctx.strokeStyle=`rgba(217,255,85,${(1-d/78)*.022})`;ctx.lineWidth=.55;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+    }
+    if(!reduced) raf=requestAnimationFrame(frame);
+  }
+  addEventListener('resize',resize,{passive:true}); resize(); if(!reduced) raf=requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
+
